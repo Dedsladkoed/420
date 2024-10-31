@@ -26,29 +26,93 @@
             gap: 20px;
         }
         .product-card {
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 16px;
-            margin: 16px;
+            position: relative;
             width: 300px;
+            border: 1px solid #ccc;
+            overflow: hidden;
             display: flex;
             flex-direction: column;
-            background-color: white;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 12px;
         }
+
         .product-image {
             width: 100%;
-            height: 200px; /* Фиксированная высота для всех изображений */
-            object-fit: contain; /* Это обеспечит, что изображение поместится внутрь контейнера, сохраняя пропорции */
+            height: 200px;
+            object-fit: contain;
+            display: block;
+            margin-bottom: 15px;
+            background-color: #ffffff;
+            border-radius: 8px;
+        }
+
+        .product-info {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-color: #ffffff;
+        }
+
+        .product-info h3 {
+            margin: 0 0 15px 0;
+            font-size: 16px;
+            line-height: 1.2;
+        }
+
+        .product-info .price {
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .product-info .description {
+            font-size: 14px;
+            line-height: 1.4;
+            margin-bottom: 15px;
+        }
+
+        .sold-out {
+            display: none;
+            position: absolute;
+            top: 25px;
+            left: -50px;
+            width: 200px;
+            background-color: rgba(255, 0, 0, 0.8);
+            color: #ffffff;
+            text-align: center;
+            line-height: 30px;
+            font-size: 16px;
+            font-weight: bold;
+            transform: rotate(-45deg);
+            z-index: 1;
+            text-transform: uppercase;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            pointer-events: none;
+            border-radius: 4px;
+        }
+
+        .fan-product .sold-out {
+            display: block;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
             margin-bottom: 12px;
-            cursor: pointer; /* Добавьте этот стиль */
+            cursor: pointer;
         }
         .product-info {
             padding: 15px;
         }
         .product-title {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: bold;
             margin-bottom: 10px;
+            line-height: 1.3;
         }
         .product-price {
             margin-bottom: 8px;
@@ -171,7 +235,7 @@
 
     <!-- Товар 4 -->
     <div class="product-card">
-        <img src="https://heygrowers.ru/wp-content/uploads/2022/02/8853_urban-box-120.jpg" alt="Гроутент URBAN Grower 120*120*200" class="product-image">
+        <img src="https://heygrowers.ru/wp-content/uploads/2022/02/8853_urban-box-120.jpg" alt="Г��утент URBAN Grower 120*120*200" class="product-image">
         <div class="product-info">
             <div class="product-title">Гроутент URBAN Grower 120*120*200</div>
             <div class="product-price internet-price">
@@ -189,60 +253,6 @@
 
     <!-- Товар 5 -->
     <div class="product-card">
-        <img src="https://growland-spb.ru/media/filer_public/30/e9/30e9abd3-e270-443c-8716-e1dfecd308d5/neva_800_1.png" alt="Светильник bigcock design Neva 800 вт" class="product-image">
-        <div class="product-info">
-            <div class="product-title">Светильник bigcock design Neva 800 вт</div>
-            <div class="product-price internet-price">
-                примерная цена в интернетах:
-                <span class="internet-price-value">133 000 р.</span>
-            </div>
-            <div class="product-price sale-price">продам за: <span class="price-value">108 000</span> р.</div>
-            <div class="product-details">
-                <p>Количество: 2 шт</p>
-                <p>Состояние: б/у (6 месяцев)</p>
-                <p>Комментарий: полностью рабочая</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Товар 6 -->
-    <div class="product-card">
-        <img src="https://static.insales-cdn.com/images/products/1/7921/544366321/2b4b08_ffc1be469843460cb7ce0c56dbfc3268_mv2.png" alt="Светильник bigcock design Skeleton 3.0 600 вт" class="product-image">
-        <div class="product-info">
-            <div class="product-title">Светильник bigcock design Skeleton 3.0 600 вт</div>
-            <div class="product-price internet-price">
-                примерная цена в интернетах:
-                <span class="internet-price-value">110 000 р.</span>
-            </div>
-            <div class="product-price sale-price">продам за: <span class="price-value">100 000</span> р.</div>
-            <div class="product-details">
-                <p>Количество: 2 шт</p>
-                <p>Состояние: б/у (2 месяца)</p>
-                <p>Комментарий: как новые. Работают исправно</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Товар 7 -->
-    <div class="product-card">
-        <img src="https://static.insales-cdn.com/images/products/1/7967/544366367/99159b_3758a51c3ac34e059d0750520f834a5f_mv2.png" alt="Светильник bigcock design Flasher 2UP IRUVS-200 вт" class="product-image">
-        <div class="product-info">
-            <div class="product-title">Светильник bigcock design Flasher 2UP IRUVS-200 вт</div>
-            <div class="product-price internet-price">
-                примерная цена в интернетах:
-                <span class="internet-price-value">25 000 р.</span>
-            </div>
-            <div class="product-price sale-price">продам за: <span class="price-value">20 000</span> р.</div>
-            <div class="product-details">
-                <p>Количество: 1 шт</p>
-                <p>Состояние: б/у (4 месяца)</p>
-                <p>Комментарий: работает исправно. Как новый</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Товар 8 -->
-    <div class="product-card">
         <img src="https://grow-store.ru/images/virtuemart/product/happy%20sun%20120x120.png" alt="Светильник happysun 600 вт от Gorshkoff" class="product-image">
         <div class="product-info">
             <div class="product-title">Светильник happysun 600 вт от Gorshkoff</div>
@@ -259,7 +269,7 @@
         </div>
     </div>
 
-    <!-- Товар 9 -->
+    <!-- Товар 6 -->
     <div class="product-card">
         <img src="https://blagovest.ru/upload/resize_cache/iblock/2af/500_500_140cd750bba9870f18aada2478b24840a/cnaiv4tks1cz9gw1bh3jmr2a4ebinreh.jpeg" alt="Канальный вентилятор soler & palau td silent 500/150-160" class="product-image">
         <div class="product-info">
@@ -277,7 +287,7 @@
         </div>
     </div>
 
-    <!-- Товар 10 -->
+    <!-- Товар 7 -->
     <div class="product-card">
         <img src="https://cdn.ppk-levsha.ru/images/products/1/2697/82602633/1f7847a7859688b4517944286cdc46dd.jpg" alt="Канальный вентилятор soler & palau td silent 350/125" class="product-image">
         <div class="product-info">
@@ -295,7 +305,7 @@
         </div>
     </div>
 
-    <!-- Товар 11 -->
+    <!-- Товар 8 -->
     <div class="product-card">
         <img src="https://vent-era.ru/images/detailed/7/soler-palau-inter-4p.jpg" alt="Регулятор скорости для вентилятора INTER 4P Soler&Palau" class="product-image">
         <div class="product-info">
@@ -306,14 +316,14 @@
             </div>
             <div class="product-price sale-price">продам за: <span class="price-value">5 000</span> р.</div>
             <div class="product-details">
-                <p>Количество: 1 шт</p>
+                <p>оличество: 1 шт</p>
                 <p>Состояние: новый</p>
                 <p>Комментарий: абсолютно новый</p>
             </div>
         </div>
     </div>
 
-    <!-- Товар 11 -->
+    <!-- Товар 9 -->
     <div class="product-card">
         <img src="https://avatars.mds.yandex.net/get-mpic/5009353/img_id8236625702927282760.jpeg/orig" alt="Регулятор скорости Soler&Palau REGULADOR REB-1N" class="product-image">
         <div class="product-info">
@@ -331,13 +341,13 @@
         </div>
     </div>
 
-    <!-- Товар 12 -->
+    <!-- Товар 10 -->
     <div class="product-card">
         <img src="https://ozonair.ru/wa-data/public/shop/products/09/82/8209/images/80836/80836.970.png" alt="Гибкий шумоглушитель Sonodec 127 мм * 1м GLX" class="product-image">
         <div class="product-info">
             <div class="product-title">Гибкий шумоглушитель Sonodec 127 мм * 1м GLX</div>
             <div class="product-price internet-price">
-                примерная це��а в интернетах:
+                примерная цена в интернетах:
                 <span class="internet-price-value">3000 р.</span>
             </div>
             <div class="product-price sale-price">продам за: <span class="price-value">2 500</span> р.</div>
@@ -362,7 +372,7 @@
             <div class="product-details">
                 <p>Количество: 3 шт</p>
                 <p>Состояние: б/у (6 месяцев)</p>
-                <p>Комментарий: очень хорошо справляются со своей задачей</p>
+                <p>Комментарий: очень хорошо справляются со своей задаей</p>
             </div>
         </div>
     </div>
@@ -475,6 +485,25 @@
         </div>
     </div>
 
+    <!-- Товар 20 -->
+    <div class="product-card fan-product">
+        <div class="sold-out">ПРОДАНО</div>
+        <img src="https://ir.ozone.ru/s3/multimedia-e/c1000/6167062838.jpg" alt="Вентилятор на прищепке поворотный Grip Clip Fan 16 см" class="product-image">
+        <div class="product-info">
+            <div class="product-title">Вентилятор на прищепке поворотный Grip Clip Fan 16 см</div>
+            <div class="product-price internet-price">
+                примерная цена в интернетах:
+                <span class="internet-price-value">3200 р.</span>
+            </div>
+            <div class="product-price sale-price">продам за: <span class="price-value">2 500</span> р.</div>
+            <div class="product-details">
+                <p>Количество: 2 шт</p>
+                <p>Состояние: б/у (6 месяцев)</p>
+                <p>Комментарий: </p>
+            </div>
+        </div>
+    </div>
+
     <!-- Товар 21 -->
     <div class="product-card">
         <img src="https://static.insales-cdn.com/r/eZc3uitDnLc/rs:fit:1000:0:1/q:100/plain/images/products/1/6927/426498831/clipfan_black_20_01.jpg@jpg" alt="Вентилятор Garden Highpro PROFAN PROFESSIONAL CLIP FAN 20 см 12 w" class="product-image">
@@ -487,7 +516,7 @@
             <div class="product-price sale-price">продам за: <span class="price-value">2 500</span> р.</div>
             <div class="product-details">
                 <p>Количество: 1 шт</p>
-                <p>Состояние: б/у (2 месяца)</p>
+                <p>Со��тояние: б/у (2 месяца)</p>
                 <p>Комментарий: </p>
             </div>
         </div>
@@ -504,7 +533,7 @@
             </div>
             <div class="product-price sale-price">продам за: <span class="price-value">3 000</span> р.</div>
             <div class="product-details">
-                <p>Количество: 1 шт</p>
+                <p>Кличество: 1 шт</p>
                 <p>Состояние: б/у (2 месяца)</p>
                 <p>Комментарий: </p>
             </div>
@@ -531,7 +560,7 @@
 
     <!-- Товар 24 -->
     <div class="product-card">
-        <img src="https://filtercity.ru/images/detailed/15/osmosis-geyzer-prestige-maxi-1500.jpg" alt="Фильтр для очистки воды Гейзер Престиж Макси 1500 (осмос)" class="product-image">
+        <img src="https://filtercity.ru/images/detailed/15/osmosis-geyzer-prestige-maxi-1500.jpg" alt="Фильтр ля очистки воды Гейзер Престиж Макси 1500 (осмос)" class="product-image">
         <div class="product-info">
             <div class="product-title">Фильтр для очистки воды Гейзер Престиж Макси 1500 (осмос)</div>
             <div class="product-price internet-price">
@@ -729,7 +758,8 @@
     </div>
 
     <!-- Товар 35 -->
-    <div class="product-card">
+    <div class="product-card fan-product">
+        <div class="sold-out">ПРОДАНО</div>
         <img src="https://growerline.ru/upload/resize_cache/webp/iblock/582/z7xed6wyhxs1h4w20z66ulf8e8yi7938/3573f238e3a4dc738dfd2dd68bca2dfe.webp" alt="E-Mode EC Controller" class="product-image">
         <div class="product-info">
             <div class="product-title">E-Mode EC Controller</div>
@@ -737,7 +767,7 @@
                 примерная цена в интернетах:
                 <span class="internet-price-value">38 500 р.</span>
             </div>
-            <div class="product-price sale-price">продам за: <span class="price-value">35 000</span> р.</div>
+            <div class="product-price sale-price">продам за: <span class="price-value">34 000</span> р.</div>
             <div class="product-details">
                 <p>Количество: 1 шт</p>
                 <p>Состояние: как новый (2 месяца)</p>
@@ -747,7 +777,8 @@
     </div>
 
     <!-- Товар 36 -->
-    <div class="product-card">
+    <div class="product-card fan-product">
+        <div class="sold-out">ПРОДАНО</div>
         <img src="https://growerline.ru/upload/resize_cache/webp/upload/iblock/16f/bvzxczn4nth6k8m330bmsotlyiqxq3fy/picture.webp" alt="E-Mode PH Controller" class="product-image">
         <div class="product-info">
             <div class="product-title">E-Mode PH Controller</div>
@@ -755,7 +786,7 @@
                 примерная цена в интернетах:
                 <span class="internet-price-value">32 000 р.</span>
             </div>
-            <div class="product-price sale-price">продам за: <span class="price-value">27 000</span> р.</div>
+            <div class="product-price sale-price">продам за: <span class="price-value">25 000</span> р.</div>
             <div class="product-details">
                 <p>Количество: 1 шт</p>
                 <p>Состояние: как новый (2 месяца)</p>
@@ -855,7 +886,8 @@
     </div>
 
     <!-- Товар 42 -->
-    <div class="product-card">
+    <div class="product-card fan-product">
+        <div class="sold-out">ПРОДАНО</div>
         <img src="https://growmama.ru/upload/resize_cache/webp/iblock/83e/oiqnolpjv61r4rr176t5m3v78cs3msu9.webp" alt="Опрыскиватель Garden Highpro pump pro+ 2л" class="product-image">
         <div class="product-info">
             <div class="product-title">Опрыскиватель Garden Highpro pump pro+ 2л</div>
